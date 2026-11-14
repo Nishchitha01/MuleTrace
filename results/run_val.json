@@ -1,0 +1,984 @@
+{
+  "split": "val",
+  "n_rows": 1015669,
+  "illicit_rows": 1081,
+  "n_alerts": 4003,
+  "alert_size_distribution": {
+    "min_accounts": 2,
+    "median_accounts": 31.0,
+    "p90_accounts": 31.0,
+    "max_accounts": 71
+  },
+  "top_5_alerts": [
+    {
+      "alert_id": "V-1354",
+      "risk_score": 79.24,
+      "typology": "Gather-scatter layering hub",
+      "n_accounts": 71,
+      "n_edges": 73,
+      "total_amount_usd": 1414067.89
+    },
+    {
+      "alert_id": "V-0481",
+      "risk_score": 83.71,
+      "typology": "Layering through mule accounts",
+      "n_accounts": 62,
+      "n_edges": 65,
+      "total_amount_usd": 7887968.93
+    },
+    {
+      "alert_id": "V-1918",
+      "risk_score": 79.93,
+      "typology": "Layering through mule accounts",
+      "n_accounts": 60,
+      "n_edges": 66,
+      "total_amount_usd": 635697.8
+    },
+    {
+      "alert_id": "V-0663",
+      "risk_score": 83.22,
+      "typology": "Layering through mule accounts",
+      "n_accounts": 57,
+      "n_edges": 65,
+      "total_amount_usd": 4227369.1
+    },
+    {
+      "alert_id": "V-1902",
+      "risk_score": 79.47,
+      "typology": "Layering through mule accounts",
+      "n_accounts": 55,
+      "n_edges": 68,
+      "total_amount_usd": 647581.02
+    }
+  ],
+  "detector_stats": {
+    "fan_out": {
+      "hits": 2847,
+      "covered_transactions": 104450,
+      "precision": 0.0013882240306366683,
+      "time_s": 34.94724416732788
+    },
+    "fan_in": {
+      "hits": 767,
+      "covered_transactions": 9228,
+      "precision": 0.002600780234070221,
+      "time_s": 48.629656076431274
+    },
+    "chain": {
+      "hits": 557,
+      "covered_transactions": 1354,
+      "precision": 0.011816838995568686,
+      "time_s": 14.587451934814453
+    },
+    "cycle": {
+      "hits": 53,
+      "covered_transactions": 100,
+      "precision": 0.19,
+      "time_s": 14.688252925872803
+    }
+  },
+  "baseline_tuned_params": {
+    "amt_thr": 2500.0,
+    "daily_n": 50,
+    "daily_sum": 5000000.0,
+    "f1": 0.0027282252299821556,
+    "precision": 0.001366477905085999,
+    "recall": 0.7880765883376849,
+    "tp": 1811,
+    "fp": 1323494,
+    "fn": 487
+  },
+  "baseline_evaluation": {
+    "train_tuned": {
+      "precision": 0.001366477905085999,
+      "recall": 0.7880765883376849,
+      "f1": 0.0027282252299821556,
+      "tp": 1811,
+      "fp": 1323494,
+      "fn": 487,
+      "flagged_count": 1325305,
+      "total_count": 3047007
+    },
+    "train_plain_10k": {
+      "precision": 0.0011330249421766581,
+      "recall": 0.3154917319408181,
+      "f1": 0.002257940944722491,
+      "tp": 725,
+      "fp": 639155,
+      "fn": 1573,
+      "flagged_count": 639880,
+      "total_count": 3047007
+    },
+    "val_tuned": {
+      "precision": 0.0021625806960698735,
+      "recall": 0.8112858464384829,
+      "f1": 0.004313662801421493,
+      "tp": 877,
+      "fp": 404657,
+      "fn": 204,
+      "flagged_count": 405534,
+      "total_count": 1015669
+    },
+    "val_plain_10k": {
+      "precision": 0.0025234407857301897,
+      "recall": 0.3774283071230342,
+      "f1": 0.005013362823702885,
+      "tp": 408,
+      "fp": 161276,
+      "fn": 673,
+      "flagged_count": 161684,
+      "total_count": 1015669
+    }
+  },
+  "muletrace_tx_prf": {
+    "precision": 0.001772772303039783,
+    "recall": 0.1887141535615171,
+    "f1": 0.003512547888597133,
+    "tp": 204,
+    "fp": 114870,
+    "fn": 877,
+    "tn": 899718,
+    "flagged_count": 115074,
+    "total_count": 1015669
+  },
+  "baseline_tx_prf": {
+    "precision": 0.0021625806960698735,
+    "recall": 0.8112858464384829,
+    "f1": 0.004313662801421493,
+    "tp": 877,
+    "fp": 404657,
+    "fn": 204,
+    "tn": 609931,
+    "flagged_count": 405534,
+    "total_count": 1015669
+  },
+  "matched_budget_baseline": {
+    "budget_n": 115074,
+    "muletrace_prf": {
+      "precision": 0.001772772303039783,
+      "recall": 0.1887141535615171,
+      "f1": 0.003512547888597133,
+      "tp": 204,
+      "fp": 114870,
+      "fn": 877,
+      "tn": 899718,
+      "flagged_count": 115074,
+      "total_count": 1015669
+    },
+    "baseline_matched_prf": {
+      "precision": 0.0008863861515198915,
+      "recall": 0.09435707678075855,
+      "f1": 0.0017562739442985665,
+      "tp": 102,
+      "fp": 114972,
+      "fn": 979,
+      "tn": 899616,
+      "flagged_count": 115074,
+      "total_count": 1015669
+    }
+  },
+  "ranked_alert_metrics": [
+    {
+      "top_k_alerts": 50,
+      "flagged_transactions": 2024,
+      "illicit_covered": 6,
+      "tx_precision": 0.002964,
+      "rings_touched_strict": "0/16",
+      "rings_touched_relaxed": "0/76"
+    },
+    {
+      "top_k_alerts": 100,
+      "flagged_transactions": 3387,
+      "illicit_covered": 15,
+      "tx_precision": 0.004429,
+      "rings_touched_strict": "0/16",
+      "rings_touched_relaxed": "0/76"
+    },
+    {
+      "top_k_alerts": 250,
+      "flagged_transactions": 8618,
+      "illicit_covered": 28,
+      "tx_precision": 0.003249,
+      "rings_touched_strict": "0/16",
+      "rings_touched_relaxed": "0/76"
+    },
+    {
+      "top_k_alerts": 500,
+      "flagged_transactions": 18579,
+      "illicit_covered": 40,
+      "tx_precision": 0.002153,
+      "rings_touched_strict": "0/16",
+      "rings_touched_relaxed": "0/76"
+    }
+  ],
+  "ring_recall_strict": {
+    "overall_recall": 0.0,
+    "found": 0,
+    "total": 16,
+    "per_type": {
+      "BIPARTITE": {
+        "found": 0,
+        "total": 2,
+        "recall": 0.0
+      },
+      "FAN-IN": {
+        "found": 0,
+        "total": 1,
+        "recall": 0.0
+      },
+      "FAN-OUT": {
+        "found": 0,
+        "total": 3,
+        "recall": 0.0
+      },
+      "RANDOM": {
+        "found": 0,
+        "total": 6,
+        "recall": 0.0
+      },
+      "SCATTER-GATHER": {
+        "found": 0,
+        "total": 1,
+        "recall": 0.0
+      },
+      "STACK": {
+        "found": 0,
+        "total": 3,
+        "recall": 0.0
+      }
+    }
+  },
+  "ring_recall_relaxed": {
+    "overall_recall": 0.0,
+    "found": 0,
+    "total": 76,
+    "per_type": {
+      "BIPARTITE": {
+        "found": 0,
+        "total": 6,
+        "recall": 0.0
+      },
+      "CYCLE": {
+        "found": 0,
+        "total": 11,
+        "recall": 0.0
+      },
+      "FAN-IN": {
+        "found": 0,
+        "total": 7,
+        "recall": 0.0
+      },
+      "FAN-OUT": {
+        "found": 0,
+        "total": 13,
+        "recall": 0.0
+      },
+      "GATHER-SCATTER": {
+        "found": 0,
+        "total": 6,
+        "recall": 0.0
+      },
+      "RANDOM": {
+        "found": 0,
+        "total": 9,
+        "recall": 0.0
+      },
+      "SCATTER-GATHER": {
+        "found": 0,
+        "total": 9,
+        "recall": 0.0
+      },
+      "STACK": {
+        "found": 0,
+        "total": 15,
+        "recall": 0.0
+      }
+    }
+  },
+  "relaxed_ring_details": [
+    {
+      "ring_index": 1,
+      "type": "STACK",
+      "accounts_count": 2,
+      "best_coverage_fraction": 0.0,
+      "best_coverage_pct": "0.0%",
+      "found_70pct": false,
+      "best_alert_id": null
+    },
+    {
+      "ring_index": 2,
+      "type": "STACK",
+      "accounts_count": 2,
+      "best_coverage_fraction": 0.0,
+      "best_coverage_pct": "0.0%",
+      "found_70pct": false,
+      "best_alert_id": null
+    },
+    {
+      "ring_index": 3,
+      "type": "STACK",
+      "accounts_count": 3,
+      "best_coverage_fraction": 0.0,
+      "best_coverage_pct": "0.0%",
+      "found_70pct": false,
+      "best_alert_id": null
+    },
+    {
+      "ring_index": 4,
+      "type": "STACK",
+      "accounts_count": 2,
+      "best_coverage_fraction": 0.0,
+      "best_coverage_pct": "0.0%",
+      "found_70pct": false,
+      "best_alert_id": null
+    },
+    {
+      "ring_index": 5,
+      "type": "BIPARTITE",
+      "accounts_count": 10,
+      "best_coverage_fraction": 0.0,
+      "best_coverage_pct": "0.0%",
+      "found_70pct": false,
+      "best_alert_id": null
+    },
+    {
+      "ring_index": 6,
+      "type": "BIPARTITE",
+      "accounts_count": 8,
+      "best_coverage_fraction": 0.0,
+      "best_coverage_pct": "0.0%",
+      "found_70pct": false,
+      "best_alert_id": null
+    },
+    {
+      "ring_index": 7,
+      "type": "RANDOM",
+      "accounts_count": 9,
+      "best_coverage_fraction": 0.0,
+      "best_coverage_pct": "0.0%",
+      "found_70pct": false,
+      "best_alert_id": null
+    },
+    {
+      "ring_index": 8,
+      "type": "RANDOM",
+      "accounts_count": 4,
+      "best_coverage_fraction": 0.0,
+      "best_coverage_pct": "0.0%",
+      "found_70pct": false,
+      "best_alert_id": null
+    },
+    {
+      "ring_index": 9,
+      "type": "FAN-OUT",
+      "accounts_count": 5,
+      "best_coverage_fraction": 0.0,
+      "best_coverage_pct": "0.0%",
+      "found_70pct": false,
+      "best_alert_id": null
+    },
+    {
+      "ring_index": 10,
+      "type": "FAN-IN",
+      "accounts_count": 3,
+      "best_coverage_fraction": 0.0,
+      "best_coverage_pct": "0.0%",
+      "found_70pct": false,
+      "best_alert_id": null
+    },
+    {
+      "ring_index": 11,
+      "type": "STACK",
+      "accounts_count": 24,
+      "best_coverage_fraction": 0.0,
+      "best_coverage_pct": "0.0%",
+      "found_70pct": false,
+      "best_alert_id": null
+    },
+    {
+      "ring_index": 12,
+      "type": "FAN-IN",
+      "accounts_count": 12,
+      "best_coverage_fraction": 0.0,
+      "best_coverage_pct": "0.0%",
+      "found_70pct": false,
+      "best_alert_id": null
+    },
+    {
+      "ring_index": 13,
+      "type": "FAN-OUT",
+      "accounts_count": 17,
+      "best_coverage_fraction": 0.0,
+      "best_coverage_pct": "0.0%",
+      "found_70pct": false,
+      "best_alert_id": null
+    },
+    {
+      "ring_index": 14,
+      "type": "SCATTER-GATHER",
+      "accounts_count": 10,
+      "best_coverage_fraction": 0.0,
+      "best_coverage_pct": "0.0%",
+      "found_70pct": false,
+      "best_alert_id": null
+    },
+    {
+      "ring_index": 15,
+      "type": "STACK",
+      "accounts_count": 4,
+      "best_coverage_fraction": 0.0,
+      "best_coverage_pct": "0.0%",
+      "found_70pct": false,
+      "best_alert_id": null
+    },
+    {
+      "ring_index": 16,
+      "type": "GATHER-SCATTER",
+      "accounts_count": 22,
+      "best_coverage_fraction": 0.0,
+      "best_coverage_pct": "0.0%",
+      "found_70pct": false,
+      "best_alert_id": null
+    },
+    {
+      "ring_index": 17,
+      "type": "FAN-OUT",
+      "accounts_count": 14,
+      "best_coverage_fraction": 0.0,
+      "best_coverage_pct": "0.0%",
+      "found_70pct": false,
+      "best_alert_id": null
+    },
+    {
+      "ring_index": 18,
+      "type": "RANDOM",
+      "accounts_count": 2,
+      "best_coverage_fraction": 0.0,
+      "best_coverage_pct": "0.0%",
+      "found_70pct": false,
+      "best_alert_id": null
+    },
+    {
+      "ring_index": 19,
+      "type": "CYCLE",
+      "accounts_count": 12,
+      "best_coverage_fraction": 0.0,
+      "best_coverage_pct": "0.0%",
+      "found_70pct": false,
+      "best_alert_id": null
+    },
+    {
+      "ring_index": 20,
+      "type": "FAN-OUT",
+      "accounts_count": 17,
+      "best_coverage_fraction": 0.0,
+      "best_coverage_pct": "0.0%",
+      "found_70pct": false,
+      "best_alert_id": null
+    },
+    {
+      "ring_index": 21,
+      "type": "CYCLE",
+      "accounts_count": 7,
+      "best_coverage_fraction": 0.0,
+      "best_coverage_pct": "0.0%",
+      "found_70pct": false,
+      "best_alert_id": null
+    },
+    {
+      "ring_index": 22,
+      "type": "RANDOM",
+      "accounts_count": 11,
+      "best_coverage_fraction": 0.0,
+      "best_coverage_pct": "0.0%",
+      "found_70pct": false,
+      "best_alert_id": null
+    },
+    {
+      "ring_index": 23,
+      "type": "GATHER-SCATTER",
+      "accounts_count": 3,
+      "best_coverage_fraction": 0.0,
+      "best_coverage_pct": "0.0%",
+      "found_70pct": false,
+      "best_alert_id": null
+    },
+    {
+      "ring_index": 24,
+      "type": "CYCLE",
+      "accounts_count": 4,
+      "best_coverage_fraction": 0.0,
+      "best_coverage_pct": "0.0%",
+      "found_70pct": false,
+      "best_alert_id": null
+    },
+    {
+      "ring_index": 25,
+      "type": "FAN-OUT",
+      "accounts_count": 2,
+      "best_coverage_fraction": 0.0,
+      "best_coverage_pct": "0.0%",
+      "found_70pct": false,
+      "best_alert_id": null
+    },
+    {
+      "ring_index": 26,
+      "type": "FAN-OUT",
+      "accounts_count": 2,
+      "best_coverage_fraction": 0.0,
+      "best_coverage_pct": "0.0%",
+      "found_70pct": false,
+      "best_alert_id": null
+    },
+    {
+      "ring_index": 27,
+      "type": "STACK",
+      "accounts_count": 33,
+      "best_coverage_fraction": 0.0,
+      "best_coverage_pct": "0.0%",
+      "found_70pct": false,
+      "best_alert_id": null
+    },
+    {
+      "ring_index": 28,
+      "type": "SCATTER-GATHER",
+      "accounts_count": 5,
+      "best_coverage_fraction": 0.0,
+      "best_coverage_pct": "0.0%",
+      "found_70pct": false,
+      "best_alert_id": null
+    },
+    {
+      "ring_index": 29,
+      "type": "SCATTER-GATHER",
+      "accounts_count": 11,
+      "best_coverage_fraction": 0.0,
+      "best_coverage_pct": "0.0%",
+      "found_70pct": false,
+      "best_alert_id": null
+    },
+    {
+      "ring_index": 30,
+      "type": "GATHER-SCATTER",
+      "accounts_count": 13,
+      "best_coverage_fraction": 0.0,
+      "best_coverage_pct": "0.0%",
+      "found_70pct": false,
+      "best_alert_id": null
+    },
+    {
+      "ring_index": 31,
+      "type": "CYCLE",
+      "accounts_count": 4,
+      "best_coverage_fraction": 0.0,
+      "best_coverage_pct": "0.0%",
+      "found_70pct": false,
+      "best_alert_id": null
+    },
+    {
+      "ring_index": 32,
+      "type": "STACK",
+      "accounts_count": 18,
+      "best_coverage_fraction": 0.0,
+      "best_coverage_pct": "0.0%",
+      "found_70pct": false,
+      "best_alert_id": null
+    },
+    {
+      "ring_index": 33,
+      "type": "CYCLE",
+      "accounts_count": 7,
+      "best_coverage_fraction": 0.0,
+      "best_coverage_pct": "0.0%",
+      "found_70pct": false,
+      "best_alert_id": null
+    },
+    {
+      "ring_index": 34,
+      "type": "RANDOM",
+      "accounts_count": 2,
+      "best_coverage_fraction": 0.0,
+      "best_coverage_pct": "0.0%",
+      "found_70pct": false,
+      "best_alert_id": null
+    },
+    {
+      "ring_index": 35,
+      "type": "BIPARTITE",
+      "accounts_count": 16,
+      "best_coverage_fraction": 0.0,
+      "best_coverage_pct": "0.0%",
+      "found_70pct": false,
+      "best_alert_id": null
+    },
+    {
+      "ring_index": 36,
+      "type": "STACK",
+      "accounts_count": 2,
+      "best_coverage_fraction": 0.0,
+      "best_coverage_pct": "0.0%",
+      "found_70pct": false,
+      "best_alert_id": null
+    },
+    {
+      "ring_index": 37,
+      "type": "SCATTER-GATHER",
+      "accounts_count": 15,
+      "best_coverage_fraction": 0.0,
+      "best_coverage_pct": "0.0%",
+      "found_70pct": false,
+      "best_alert_id": null
+    },
+    {
+      "ring_index": 38,
+      "type": "FAN-OUT",
+      "accounts_count": 7,
+      "best_coverage_fraction": 0.0,
+      "best_coverage_pct": "0.0%",
+      "found_70pct": false,
+      "best_alert_id": null
+    },
+    {
+      "ring_index": 39,
+      "type": "RANDOM",
+      "accounts_count": 2,
+      "best_coverage_fraction": 0.0,
+      "best_coverage_pct": "0.0%",
+      "found_70pct": false,
+      "best_alert_id": null
+    },
+    {
+      "ring_index": 40,
+      "type": "STACK",
+      "accounts_count": 21,
+      "best_coverage_fraction": 0.0,
+      "best_coverage_pct": "0.0%",
+      "found_70pct": false,
+      "best_alert_id": null
+    },
+    {
+      "ring_index": 41,
+      "type": "STACK",
+      "accounts_count": 45,
+      "best_coverage_fraction": 0.0,
+      "best_coverage_pct": "0.0%",
+      "found_70pct": false,
+      "best_alert_id": null
+    },
+    {
+      "ring_index": 42,
+      "type": "SCATTER-GATHER",
+      "accounts_count": 2,
+      "best_coverage_fraction": 0.0,
+      "best_coverage_pct": "0.0%",
+      "found_70pct": false,
+      "best_alert_id": null
+    },
+    {
+      "ring_index": 43,
+      "type": "BIPARTITE",
+      "accounts_count": 26,
+      "best_coverage_fraction": 0.0,
+      "best_coverage_pct": "0.0%",
+      "found_70pct": false,
+      "best_alert_id": null
+    },
+    {
+      "ring_index": 44,
+      "type": "FAN-OUT",
+      "accounts_count": 3,
+      "best_coverage_fraction": 0.0,
+      "best_coverage_pct": "0.0%",
+      "found_70pct": false,
+      "best_alert_id": null
+    },
+    {
+      "ring_index": 45,
+      "type": "FAN-OUT",
+      "accounts_count": 3,
+      "best_coverage_fraction": 0.0,
+      "best_coverage_pct": "0.0%",
+      "found_70pct": false,
+      "best_alert_id": null
+    },
+    {
+      "ring_index": 46,
+      "type": "BIPARTITE",
+      "accounts_count": 24,
+      "best_coverage_fraction": 0.0,
+      "best_coverage_pct": "0.0%",
+      "found_70pct": false,
+      "best_alert_id": null
+    },
+    {
+      "ring_index": 47,
+      "type": "CYCLE",
+      "accounts_count": 3,
+      "best_coverage_fraction": 0.0,
+      "best_coverage_pct": "0.0%",
+      "found_70pct": false,
+      "best_alert_id": null
+    },
+    {
+      "ring_index": 48,
+      "type": "FAN-OUT",
+      "accounts_count": 14,
+      "best_coverage_fraction": 0.0,
+      "best_coverage_pct": "0.0%",
+      "found_70pct": false,
+      "best_alert_id": null
+    },
+    {
+      "ring_index": 49,
+      "type": "CYCLE",
+      "accounts_count": 5,
+      "best_coverage_fraction": 0.0,
+      "best_coverage_pct": "0.0%",
+      "found_70pct": false,
+      "best_alert_id": null
+    },
+    {
+      "ring_index": 50,
+      "type": "CYCLE",
+      "accounts_count": 5,
+      "best_coverage_fraction": 0.0,
+      "best_coverage_pct": "0.0%",
+      "found_70pct": false,
+      "best_alert_id": null
+    },
+    {
+      "ring_index": 51,
+      "type": "FAN-OUT",
+      "accounts_count": 3,
+      "best_coverage_fraction": 0.0,
+      "best_coverage_pct": "0.0%",
+      "found_70pct": false,
+      "best_alert_id": null
+    },
+    {
+      "ring_index": 52,
+      "type": "FAN-IN",
+      "accounts_count": 9,
+      "best_coverage_fraction": 0.0,
+      "best_coverage_pct": "0.0%",
+      "found_70pct": false,
+      "best_alert_id": null
+    },
+    {
+      "ring_index": 53,
+      "type": "FAN-OUT",
+      "accounts_count": 15,
+      "best_coverage_fraction": 0.0,
+      "best_coverage_pct": "0.0%",
+      "found_70pct": false,
+      "best_alert_id": null
+    },
+    {
+      "ring_index": 54,
+      "type": "FAN-IN",
+      "accounts_count": 9,
+      "best_coverage_fraction": 0.0,
+      "best_coverage_pct": "0.0%",
+      "found_70pct": false,
+      "best_alert_id": null
+    },
+    {
+      "ring_index": 55,
+      "type": "FAN-OUT",
+      "accounts_count": 13,
+      "best_coverage_fraction": 0.0,
+      "best_coverage_pct": "0.0%",
+      "found_70pct": false,
+      "best_alert_id": null
+    },
+    {
+      "ring_index": 56,
+      "type": "SCATTER-GATHER",
+      "accounts_count": 8,
+      "best_coverage_fraction": 0.0,
+      "best_coverage_pct": "0.0%",
+      "found_70pct": false,
+      "best_alert_id": null
+    },
+    {
+      "ring_index": 57,
+      "type": "STACK",
+      "accounts_count": 24,
+      "best_coverage_fraction": 0.0,
+      "best_coverage_pct": "0.0%",
+      "found_70pct": false,
+      "best_alert_id": null
+    },
+    {
+      "ring_index": 58,
+      "type": "CYCLE",
+      "accounts_count": 8,
+      "best_coverage_fraction": 0.0,
+      "best_coverage_pct": "0.0%",
+      "found_70pct": false,
+      "best_alert_id": null
+    },
+    {
+      "ring_index": 59,
+      "type": "GATHER-SCATTER",
+      "accounts_count": 4,
+      "best_coverage_fraction": 0.0,
+      "best_coverage_pct": "0.0%",
+      "found_70pct": false,
+      "best_alert_id": null
+    },
+    {
+      "ring_index": 60,
+      "type": "STACK",
+      "accounts_count": 16,
+      "best_coverage_fraction": 0.0,
+      "best_coverage_pct": "0.0%",
+      "found_70pct": false,
+      "best_alert_id": null
+    },
+    {
+      "ring_index": 61,
+      "type": "STACK",
+      "accounts_count": 21,
+      "best_coverage_fraction": 0.0,
+      "best_coverage_pct": "0.0%",
+      "found_70pct": false,
+      "best_alert_id": null
+    },
+    {
+      "ring_index": 62,
+      "type": "CYCLE",
+      "accounts_count": 2,
+      "best_coverage_fraction": 0.0,
+      "best_coverage_pct": "0.0%",
+      "found_70pct": false,
+      "best_alert_id": null
+    },
+    {
+      "ring_index": 63,
+      "type": "RANDOM",
+      "accounts_count": 7,
+      "best_coverage_fraction": 0.0,
+      "best_coverage_pct": "0.0%",
+      "found_70pct": false,
+      "best_alert_id": null
+    },
+    {
+      "ring_index": 64,
+      "type": "BIPARTITE",
+      "accounts_count": 26,
+      "best_coverage_fraction": 0.0,
+      "best_coverage_pct": "0.0%",
+      "found_70pct": false,
+      "best_alert_id": null
+    },
+    {
+      "ring_index": 65,
+      "type": "STACK",
+      "accounts_count": 24,
+      "best_coverage_fraction": 0.0,
+      "best_coverage_pct": "0.0%",
+      "found_70pct": false,
+      "best_alert_id": null
+    },
+    {
+      "ring_index": 66,
+      "type": "SCATTER-GATHER",
+      "accounts_count": 15,
+      "best_coverage_fraction": 0.0,
+      "best_coverage_pct": "0.0%",
+      "found_70pct": false,
+      "best_alert_id": null
+    },
+    {
+      "ring_index": 67,
+      "type": "FAN-IN",
+      "accounts_count": 14,
+      "best_coverage_fraction": 0.0,
+      "best_coverage_pct": "0.0%",
+      "found_70pct": false,
+      "best_alert_id": null
+    },
+    {
+      "ring_index": 68,
+      "type": "SCATTER-GATHER",
+      "accounts_count": 13,
+      "best_coverage_fraction": 0.0,
+      "best_coverage_pct": "0.0%",
+      "found_70pct": false,
+      "best_alert_id": null
+    },
+    {
+      "ring_index": 69,
+      "type": "SCATTER-GATHER",
+      "accounts_count": 8,
+      "best_coverage_fraction": 0.0,
+      "best_coverage_pct": "0.0%",
+      "found_70pct": false,
+      "best_alert_id": null
+    },
+    {
+      "ring_index": 70,
+      "type": "GATHER-SCATTER",
+      "accounts_count": 15,
+      "best_coverage_fraction": 0.0,
+      "best_coverage_pct": "0.0%",
+      "found_70pct": false,
+      "best_alert_id": null
+    },
+    {
+      "ring_index": 71,
+      "type": "FAN-IN",
+      "accounts_count": 11,
+      "best_coverage_fraction": 0.0,
+      "best_coverage_pct": "0.0%",
+      "found_70pct": false,
+      "best_alert_id": null
+    },
+    {
+      "ring_index": 72,
+      "type": "CYCLE",
+      "accounts_count": 2,
+      "best_coverage_fraction": 0.0,
+      "best_coverage_pct": "0.0%",
+      "found_70pct": false,
+      "best_alert_id": null
+    },
+    {
+      "ring_index": 73,
+      "type": "FAN-IN",
+      "accounts_count": 4,
+      "best_coverage_fraction": 0.0,
+      "best_coverage_pct": "0.0%",
+      "found_70pct": false,
+      "best_alert_id": null
+    },
+    {
+      "ring_index": 74,
+      "type": "RANDOM",
+      "accounts_count": 2,
+      "best_coverage_fraction": 0.0,
+      "best_coverage_pct": "0.0%",
+      "found_70pct": false,
+      "best_alert_id": null
+    },
+    {
+      "ring_index": 75,
+      "type": "RANDOM",
+      "accounts_count": 2,
+      "best_coverage_fraction": 0.0,
+      "best_coverage_pct": "0.0%",
+      "found_70pct": false,
+      "best_alert_id": null
+    },
+    {
+      "ring_index": 76,
+      "type": "GATHER-SCATTER",
+      "accounts_count": 10,
+      "best_coverage_fraction": 0.0,
+      "best_coverage_pct": "0.0%",
+      "found_70pct": false,
+      "best_alert_id": null
+    }
+  ]
+}

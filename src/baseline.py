@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np
-from typing import Dict, Any, Tuple, Optional, List
+from typing import Dict, Any, Tuple, Optional, List, Union
 
 def compute_daily_stats(df: pd.DataFrame) -> Tuple[np.ndarray, np.ndarray]:
     """
@@ -41,11 +41,11 @@ def tune_baseline(
     on the train split. Never uses or sees the validation or test split.
     """
     if amt_grid is None:
-        amt_grid = [10000, 50000, 100000, 500000, 1000000, 5000000, 10000000, float('inf')]
+        amt_grid = [1000.0, 2500.0, 5000.0, 10000.0, 25000.0, 50000.0, 100000.0, 250000.0, 500000.0, 1000000.0]
     if n_grid is None:
-        n_grid = [2, 3, 5, 10, 20, 50, 100, 200, 500, 1000, float('inf')]
+        n_grid = [3, 5, 10, 20, 50, 100, 200]
     if sum_grid is None:
-        sum_grid = [50000, 100000, 500000, 1000000, 5000000, 10000000, 50000000, 100000000, float('inf')]
+        sum_grid = [5000.0, 10000.0, 25000.0, 50000.0, 100000.0, 250000.0, 500000.0, 1000000.0, 2500000.0, 5000000.0]
 
     y_train = (train['label'] == 1).to_numpy(dtype=bool)
     amt_train = train['amount_usd'].to_numpy(dtype=float)
@@ -103,8 +103,9 @@ def tune_baseline(
 
 def evaluate_baseline(
     df: pd.DataFrame,
-    params: Dict[str, Any]
-) -> Dict[str, Any]:
+    params: Dict[str, Any],
+    return_series: bool = False,
+) -> Any:
     """
     Evaluate fixed baseline parameters on a given split (e.g. validation).
     """
@@ -115,6 +116,9 @@ def evaluate_baseline(
         daily_n=params['daily_n'],
         daily_sum=params['daily_sum']
     ).to_numpy(dtype=bool)
+
+    if return_series:
+        return pd.Series(flagged, index=df.index)
 
     tp = int(np.count_nonzero(flagged & y_true))
     fp = int(np.count_nonzero(flagged & ~y_true))
