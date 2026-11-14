@@ -1,0 +1,13 @@
+{
+  "alert_id": "A-001",
+  "risk_score": 87.0,
+  "rule_score": 74.0,
+  "typology": "Round-tripping",
+  "patterns": ["cycle"],
+  "accounts": ["8000EBD30", "80012F4A1"],
+  "edges": [{"from": "8000EBD30", "to": "80012F4A1", "time": "2022-09-01T10:15", "amount_usd": 12000.0}],
+  "evidence": {"total_amount_usd": 36000, "duration_hours": 5.2, "cycle_length": 3},
+  "risk_breakdown": [],
+  "key_players": [],
+  "summary": null
+}
