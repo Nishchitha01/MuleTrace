@@ -89,3 +89,19 @@ if __name__ == "__main__":
         print(f"  {r_type:<20} : {count:>4}")
     print("-" * 35)
     print(f"  {'TOTAL':<20} : {len(rings):>4}")
+# ---- normalise ring account IDs so they match src/dst in load.py ----
+def _norm_acc(a):
+    bank, _, acc = a.partition("_")
+    try:
+        bank = str(int(bank))      # "020" -> "20", "00410" -> "410"
+    except ValueError:
+        pass
+    return f"{bank}_{acc}"
+
+_raw_parse_patterns = parse_patterns
+
+def parse_patterns(path):
+    rings = _raw_parse_patterns(path)
+    for r in rings:
+        r["accounts"] = {_norm_acc(a) for a in r["accounts"]}
+    return rings

@@ -142,7 +142,7 @@ def clusters_to_alerts(
 
         alert: dict = {
             "alert_id": alert_id,
-            "risk_score": rs,          # = rule_score now; P17 adds learned score
+                        "risk_score": round(25 * max({"cycle": 3, "chain": 2, "fan_in": 1, "fan_out": 0}.get(p, 0) for p in cl["patterns"]) + 0.25 * rs, 2),          # = rule_score now; P17 adds learned score
             "rule_score": rs,
             "typology": cl["typology"],
             "patterns": sorted(cl["patterns"]),

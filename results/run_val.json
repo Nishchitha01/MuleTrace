@@ -12,7 +12,7 @@
   "top_5_alerts": [
     {
       "alert_id": "V-1354",
-      "risk_score": 79.24,
+      "risk_score": 44.81,
       "typology": "Gather-scatter layering hub",
       "n_accounts": 71,
       "n_edges": 73,
@@ -20,7 +20,7 @@
     },
     {
       "alert_id": "V-0481",
-      "risk_score": 83.71,
+      "risk_score": 70.93,
       "typology": "Layering through mule accounts",
       "n_accounts": 62,
       "n_edges": 65,
@@ -28,7 +28,7 @@
     },
     {
       "alert_id": "V-1918",
-      "risk_score": 79.93,
+      "risk_score": 69.98,
       "typology": "Layering through mule accounts",
       "n_accounts": 60,
       "n_edges": 66,
@@ -36,7 +36,7 @@
     },
     {
       "alert_id": "V-0663",
-      "risk_score": 83.22,
+      "risk_score": 70.81,
       "typology": "Layering through mule accounts",
       "n_accounts": 57,
       "n_edges": 65,
@@ -44,7 +44,7 @@
     },
     {
       "alert_id": "V-1902",
-      "risk_score": 79.47,
+      "risk_score": 69.87,
       "typology": "Layering through mule accounts",
       "n_accounts": 55,
       "n_edges": 68,
@@ -56,25 +56,25 @@
       "hits": 2847,
       "covered_transactions": 104450,
       "precision": 0.0013882240306366683,
-      "time_s": 34.94724416732788
+      "time_s": 25.89953899383545
     },
     "fan_in": {
       "hits": 767,
       "covered_transactions": 9228,
       "precision": 0.002600780234070221,
-      "time_s": 48.629656076431274
+      "time_s": 34.166802644729614
     },
     "chain": {
       "hits": 557,
       "covered_transactions": 1354,
       "precision": 0.011816838995568686,
-      "time_s": 14.587451934814453
+      "time_s": 9.17190146446228
     },
     "cycle": {
       "hits": 53,
       "covered_transactions": 100,
       "precision": 0.19,
-      "time_s": 14.688252925872803
+      "time_s": 3.8583219051361084
     }
   },
   "baseline_tuned_params": {
@@ -180,40 +180,40 @@
   "ranked_alert_metrics": [
     {
       "top_k_alerts": 50,
-      "flagged_transactions": 2024,
-      "illicit_covered": 6,
-      "tx_precision": 0.002964,
-      "rings_touched_strict": "0/16",
-      "rings_touched_relaxed": "0/76"
+      "flagged_transactions": 342,
+      "illicit_covered": 19,
+      "tx_precision": 0.055556,
+      "rings_touched_strict": "9/16",
+      "rings_touched_relaxed": "15/76"
     },
     {
       "top_k_alerts": 100,
-      "flagged_transactions": 3387,
-      "illicit_covered": 15,
-      "tx_precision": 0.004429,
-      "rings_touched_strict": "0/16",
-      "rings_touched_relaxed": "0/76"
+      "flagged_transactions": 2019,
+      "illicit_covered": 27,
+      "tx_precision": 0.013373,
+      "rings_touched_strict": "9/16",
+      "rings_touched_relaxed": "16/76"
     },
     {
       "top_k_alerts": 250,
-      "flagged_transactions": 8618,
-      "illicit_covered": 28,
-      "tx_precision": 0.003249,
-      "rings_touched_strict": "0/16",
-      "rings_touched_relaxed": "0/76"
+      "flagged_transactions": 2551,
+      "illicit_covered": 37,
+      "tx_precision": 0.014504,
+      "rings_touched_strict": "9/16",
+      "rings_touched_relaxed": "16/76"
     },
     {
       "top_k_alerts": 500,
-      "flagged_transactions": 18579,
+      "flagged_transactions": 3980,
       "illicit_covered": 40,
-      "tx_precision": 0.002153,
-      "rings_touched_strict": "0/16",
-      "rings_touched_relaxed": "0/76"
+      "tx_precision": 0.01005,
+      "rings_touched_strict": "9/16",
+      "rings_touched_relaxed": "16/76"
     }
   ],
   "ring_recall_strict": {
-    "overall_recall": 0.0,
-    "found": 0,
+    "overall_recall": 0.5,
+    "found": 8,
     "total": 16,
     "per_type": {
       "BIPARTITE": {
@@ -222,35 +222,35 @@
         "recall": 0.0
       },
       "FAN-IN": {
-        "found": 0,
+        "found": 1,
         "total": 1,
-        "recall": 0.0
+        "recall": 1.0
       },
       "FAN-OUT": {
-        "found": 0,
+        "found": 2,
         "total": 3,
-        "recall": 0.0
+        "recall": 0.6666666666666666
       },
       "RANDOM": {
-        "found": 0,
+        "found": 2,
         "total": 6,
-        "recall": 0.0
+        "recall": 0.3333333333333333
       },
       "SCATTER-GATHER": {
-        "found": 0,
+        "found": 1,
         "total": 1,
-        "recall": 0.0
+        "recall": 1.0
       },
       "STACK": {
-        "found": 0,
+        "found": 2,
         "total": 3,
-        "recall": 0.0
+        "recall": 0.6666666666666666
       }
     }
   },
   "ring_recall_relaxed": {
-    "overall_recall": 0.0,
-    "found": 0,
+    "overall_recall": 0.11842105263157894,
+    "found": 9,
     "total": 76,
     "per_type": {
       "BIPARTITE": {
@@ -259,19 +259,19 @@
         "recall": 0.0
       },
       "CYCLE": {
-        "found": 0,
+        "found": 1,
         "total": 11,
-        "recall": 0.0
+        "recall": 0.09090909090909091
       },
       "FAN-IN": {
-        "found": 0,
+        "found": 1,
         "total": 7,
-        "recall": 0.0
+        "recall": 0.14285714285714285
       },
       "FAN-OUT": {
-        "found": 0,
+        "found": 2,
         "total": 13,
-        "recall": 0.0
+        "recall": 0.15384615384615385
       },
       "GATHER-SCATTER": {
         "found": 0,
@@ -279,19 +279,19 @@
         "recall": 0.0
       },
       "RANDOM": {
-        "found": 0,
+        "found": 2,
         "total": 9,
-        "recall": 0.0
+        "recall": 0.2222222222222222
       },
       "SCATTER-GATHER": {
-        "found": 0,
+        "found": 1,
         "total": 9,
-        "recall": 0.0
+        "recall": 0.1111111111111111
       },
       "STACK": {
-        "found": 0,
+        "found": 2,
         "total": 15,
-        "recall": 0.0
+        "recall": 0.13333333333333333
       }
     }
   },
@@ -309,10 +309,10 @@
       "ring_index": 2,
       "type": "STACK",
       "accounts_count": 2,
-      "best_coverage_fraction": 0.0,
-      "best_coverage_pct": "0.0%",
-      "found_70pct": false,
-      "best_alert_id": null
+      "best_coverage_fraction": 1.0,
+      "best_coverage_pct": "100.0%",
+      "found_70pct": true,
+      "best_alert_id": "V-3040"
     },
     {
       "ring_index": 3,
@@ -327,28 +327,28 @@
       "ring_index": 4,
       "type": "STACK",
       "accounts_count": 2,
-      "best_coverage_fraction": 0.0,
-      "best_coverage_pct": "0.0%",
-      "found_70pct": false,
-      "best_alert_id": null
+      "best_coverage_fraction": 1.0,
+      "best_coverage_pct": "100.0%",
+      "found_70pct": true,
+      "best_alert_id": "V-3040"
     },
     {
       "ring_index": 5,
       "type": "BIPARTITE",
       "accounts_count": 10,
-      "best_coverage_fraction": 0.0,
-      "best_coverage_pct": "0.0%",
+      "best_coverage_fraction": 0.1,
+      "best_coverage_pct": "10.0%",
       "found_70pct": false,
-      "best_alert_id": null
+      "best_alert_id": "V-0782"
     },
     {
       "ring_index": 6,
       "type": "BIPARTITE",
       "accounts_count": 8,
-      "best_coverage_fraction": 0.0,
-      "best_coverage_pct": "0.0%",
+      "best_coverage_fraction": 0.125,
+      "best_coverage_pct": "12.5%",
       "found_70pct": false,
-      "best_alert_id": null
+      "best_alert_id": "V-3012"
     },
     {
       "ring_index": 7,
@@ -381,19 +381,19 @@
       "ring_index": 10,
       "type": "FAN-IN",
       "accounts_count": 3,
-      "best_coverage_fraction": 0.0,
-      "best_coverage_pct": "0.0%",
-      "found_70pct": false,
-      "best_alert_id": null
+      "best_coverage_fraction": 1.0,
+      "best_coverage_pct": "100.0%",
+      "found_70pct": true,
+      "best_alert_id": "V-2975"
     },
     {
       "ring_index": 11,
       "type": "STACK",
       "accounts_count": 24,
-      "best_coverage_fraction": 0.0,
-      "best_coverage_pct": "0.0%",
+      "best_coverage_fraction": 0.0417,
+      "best_coverage_pct": "4.2%",
       "found_70pct": false,
-      "best_alert_id": null
+      "best_alert_id": "V-3495"
     },
     {
       "ring_index": 12,
@@ -408,109 +408,109 @@
       "ring_index": 13,
       "type": "FAN-OUT",
       "accounts_count": 17,
-      "best_coverage_fraction": 0.0,
-      "best_coverage_pct": "0.0%",
+      "best_coverage_fraction": 0.0588,
+      "best_coverage_pct": "5.9%",
       "found_70pct": false,
-      "best_alert_id": null
+      "best_alert_id": "V-0023"
     },
     {
       "ring_index": 14,
       "type": "SCATTER-GATHER",
       "accounts_count": 10,
-      "best_coverage_fraction": 0.0,
-      "best_coverage_pct": "0.0%",
+      "best_coverage_fraction": 0.1,
+      "best_coverage_pct": "10.0%",
       "found_70pct": false,
-      "best_alert_id": null
+      "best_alert_id": "V-0547"
     },
     {
       "ring_index": 15,
       "type": "STACK",
       "accounts_count": 4,
-      "best_coverage_fraction": 0.0,
-      "best_coverage_pct": "0.0%",
+      "best_coverage_fraction": 0.5,
+      "best_coverage_pct": "50.0%",
       "found_70pct": false,
-      "best_alert_id": null
+      "best_alert_id": "V-2991"
     },
     {
       "ring_index": 16,
       "type": "GATHER-SCATTER",
       "accounts_count": 22,
-      "best_coverage_fraction": 0.0,
-      "best_coverage_pct": "0.0%",
+      "best_coverage_fraction": 0.0455,
+      "best_coverage_pct": "4.5%",
       "found_70pct": false,
-      "best_alert_id": null
+      "best_alert_id": "V-3128"
     },
     {
       "ring_index": 17,
       "type": "FAN-OUT",
       "accounts_count": 14,
-      "best_coverage_fraction": 0.0,
-      "best_coverage_pct": "0.0%",
+      "best_coverage_fraction": 0.1429,
+      "best_coverage_pct": "14.3%",
       "found_70pct": false,
-      "best_alert_id": null
+      "best_alert_id": "V-3188"
     },
     {
       "ring_index": 18,
       "type": "RANDOM",
       "accounts_count": 2,
-      "best_coverage_fraction": 0.0,
-      "best_coverage_pct": "0.0%",
-      "found_70pct": false,
-      "best_alert_id": null
+      "best_coverage_fraction": 1.0,
+      "best_coverage_pct": "100.0%",
+      "found_70pct": true,
+      "best_alert_id": "V-2975"
     },
     {
       "ring_index": 19,
       "type": "CYCLE",
       "accounts_count": 12,
-      "best_coverage_fraction": 0.0,
-      "best_coverage_pct": "0.0%",
+      "best_coverage_fraction": 0.4167,
+      "best_coverage_pct": "41.7%",
       "found_70pct": false,
-      "best_alert_id": null
+      "best_alert_id": "V-2997"
     },
     {
       "ring_index": 20,
       "type": "FAN-OUT",
       "accounts_count": 17,
-      "best_coverage_fraction": 0.0,
-      "best_coverage_pct": "0.0%",
+      "best_coverage_fraction": 0.1176,
+      "best_coverage_pct": "11.8%",
       "found_70pct": false,
-      "best_alert_id": null
+      "best_alert_id": "V-3746"
     },
     {
       "ring_index": 21,
       "type": "CYCLE",
       "accounts_count": 7,
-      "best_coverage_fraction": 0.0,
-      "best_coverage_pct": "0.0%",
+      "best_coverage_fraction": 0.1429,
+      "best_coverage_pct": "14.3%",
       "found_70pct": false,
-      "best_alert_id": null
+      "best_alert_id": "V-0535"
     },
     {
       "ring_index": 22,
       "type": "RANDOM",
       "accounts_count": 11,
-      "best_coverage_fraction": 0.0,
-      "best_coverage_pct": "0.0%",
+      "best_coverage_fraction": 0.0909,
+      "best_coverage_pct": "9.1%",
       "found_70pct": false,
-      "best_alert_id": null
+      "best_alert_id": "V-0278"
     },
     {
       "ring_index": 23,
       "type": "GATHER-SCATTER",
       "accounts_count": 3,
-      "best_coverage_fraction": 0.0,
-      "best_coverage_pct": "0.0%",
+      "best_coverage_fraction": 0.6667,
+      "best_coverage_pct": "66.7%",
       "found_70pct": false,
-      "best_alert_id": null
+      "best_alert_id": "V-2991"
     },
     {
       "ring_index": 24,
       "type": "CYCLE",
       "accounts_count": 4,
-      "best_coverage_fraction": 0.0,
-      "best_coverage_pct": "0.0%",
+      "best_coverage_fraction": 0.25,
+      "best_coverage_pct": "25.0%",
       "found_70pct": false,
-      "best_alert_id": null
+      "best_alert_id": "V-3338"
     },
     {
       "ring_index": 25,
@@ -525,19 +525,19 @@
       "ring_index": 26,
       "type": "FAN-OUT",
       "accounts_count": 2,
-      "best_coverage_fraction": 0.0,
-      "best_coverage_pct": "0.0%",
-      "found_70pct": false,
-      "best_alert_id": null
+      "best_coverage_fraction": 1.0,
+      "best_coverage_pct": "100.0%",
+      "found_70pct": true,
+      "best_alert_id": "V-3040"
     },
     {
       "ring_index": 27,
       "type": "STACK",
       "accounts_count": 33,
-      "best_coverage_fraction": 0.0,
-      "best_coverage_pct": "0.0%",
+      "best_coverage_fraction": 0.0303,
+      "best_coverage_pct": "3.0%",
       "found_70pct": false,
-      "best_alert_id": null
+      "best_alert_id": "V-3717"
     },
     {
       "ring_index": 28,
@@ -552,19 +552,19 @@
       "ring_index": 29,
       "type": "SCATTER-GATHER",
       "accounts_count": 11,
-      "best_coverage_fraction": 0.0,
-      "best_coverage_pct": "0.0%",
+      "best_coverage_fraction": 0.0909,
+      "best_coverage_pct": "9.1%",
       "found_70pct": false,
-      "best_alert_id": null
+      "best_alert_id": "V-3457"
     },
     {
       "ring_index": 30,
       "type": "GATHER-SCATTER",
       "accounts_count": 13,
-      "best_coverage_fraction": 0.0,
-      "best_coverage_pct": "0.0%",
+      "best_coverage_fraction": 0.0769,
+      "best_coverage_pct": "7.7%",
       "found_70pct": false,
-      "best_alert_id": null
+      "best_alert_id": "V-0296"
     },
     {
       "ring_index": 31,
@@ -579,10 +579,10 @@
       "ring_index": 32,
       "type": "STACK",
       "accounts_count": 18,
-      "best_coverage_fraction": 0.0,
-      "best_coverage_pct": "0.0%",
+      "best_coverage_fraction": 0.0556,
+      "best_coverage_pct": "5.6%",
       "found_70pct": false,
-      "best_alert_id": null
+      "best_alert_id": "V-0965"
     },
     {
       "ring_index": 33,
@@ -597,19 +597,19 @@
       "ring_index": 34,
       "type": "RANDOM",
       "accounts_count": 2,
-      "best_coverage_fraction": 0.0,
-      "best_coverage_pct": "0.0%",
-      "found_70pct": false,
-      "best_alert_id": null
+      "best_coverage_fraction": 1.0,
+      "best_coverage_pct": "100.0%",
+      "found_70pct": true,
+      "best_alert_id": "V-3040"
     },
     {
       "ring_index": 35,
       "type": "BIPARTITE",
       "accounts_count": 16,
-      "best_coverage_fraction": 0.0,
-      "best_coverage_pct": "0.0%",
+      "best_coverage_fraction": 0.0625,
+      "best_coverage_pct": "6.2%",
       "found_70pct": false,
-      "best_alert_id": null
+      "best_alert_id": "V-0427"
     },
     {
       "ring_index": 36,
@@ -633,10 +633,10 @@
       "ring_index": 38,
       "type": "FAN-OUT",
       "accounts_count": 7,
-      "best_coverage_fraction": 0.0,
-      "best_coverage_pct": "0.0%",
+      "best_coverage_fraction": 0.1429,
+      "best_coverage_pct": "14.3%",
       "found_70pct": false,
-      "best_alert_id": null
+      "best_alert_id": "V-2383"
     },
     {
       "ring_index": 39,
@@ -651,64 +651,64 @@
       "ring_index": 40,
       "type": "STACK",
       "accounts_count": 21,
-      "best_coverage_fraction": 0.0,
-      "best_coverage_pct": "0.0%",
+      "best_coverage_fraction": 0.0476,
+      "best_coverage_pct": "4.8%",
       "found_70pct": false,
-      "best_alert_id": null
+      "best_alert_id": "V-3713"
     },
     {
       "ring_index": 41,
       "type": "STACK",
       "accounts_count": 45,
-      "best_coverage_fraction": 0.0,
-      "best_coverage_pct": "0.0%",
+      "best_coverage_fraction": 0.0222,
+      "best_coverage_pct": "2.2%",
       "found_70pct": false,
-      "best_alert_id": null
+      "best_alert_id": "V-3945"
     },
     {
       "ring_index": 42,
       "type": "SCATTER-GATHER",
       "accounts_count": 2,
-      "best_coverage_fraction": 0.0,
-      "best_coverage_pct": "0.0%",
-      "found_70pct": false,
-      "best_alert_id": null
+      "best_coverage_fraction": 1.0,
+      "best_coverage_pct": "100.0%",
+      "found_70pct": true,
+      "best_alert_id": "V-3040"
     },
     {
       "ring_index": 43,
       "type": "BIPARTITE",
       "accounts_count": 26,
-      "best_coverage_fraction": 0.0,
-      "best_coverage_pct": "0.0%",
+      "best_coverage_fraction": 0.0385,
+      "best_coverage_pct": "3.8%",
       "found_70pct": false,
-      "best_alert_id": null
+      "best_alert_id": "V-1902"
     },
     {
       "ring_index": 44,
       "type": "FAN-OUT",
       "accounts_count": 3,
-      "best_coverage_fraction": 0.0,
-      "best_coverage_pct": "0.0%",
+      "best_coverage_fraction": 0.6667,
+      "best_coverage_pct": "66.7%",
       "found_70pct": false,
-      "best_alert_id": null
+      "best_alert_id": "V-2991"
     },
     {
       "ring_index": 45,
       "type": "FAN-OUT",
       "accounts_count": 3,
-      "best_coverage_fraction": 0.0,
-      "best_coverage_pct": "0.0%",
+      "best_coverage_fraction": 0.3333,
+      "best_coverage_pct": "33.3%",
       "found_70pct": false,
-      "best_alert_id": null
+      "best_alert_id": "V-3298"
     },
     {
       "ring_index": 46,
       "type": "BIPARTITE",
       "accounts_count": 24,
-      "best_coverage_fraction": 0.0,
-      "best_coverage_pct": "0.0%",
+      "best_coverage_fraction": 0.0417,
+      "best_coverage_pct": "4.2%",
       "found_70pct": false,
-      "best_alert_id": null
+      "best_alert_id": "V-0229"
     },
     {
       "ring_index": 47,
@@ -732,37 +732,37 @@
       "ring_index": 49,
       "type": "CYCLE",
       "accounts_count": 5,
-      "best_coverage_fraction": 0.0,
-      "best_coverage_pct": "0.0%",
+      "best_coverage_fraction": 0.2,
+      "best_coverage_pct": "20.0%",
       "found_70pct": false,
-      "best_alert_id": null
+      "best_alert_id": "V-2367"
     },
     {
       "ring_index": 50,
       "type": "CYCLE",
       "accounts_count": 5,
-      "best_coverage_fraction": 0.0,
-      "best_coverage_pct": "0.0%",
+      "best_coverage_fraction": 0.2,
+      "best_coverage_pct": "20.0%",
       "found_70pct": false,
-      "best_alert_id": null
+      "best_alert_id": "V-3522"
     },
     {
       "ring_index": 51,
       "type": "FAN-OUT",
       "accounts_count": 3,
-      "best_coverage_fraction": 0.0,
-      "best_coverage_pct": "0.0%",
-      "found_70pct": false,
-      "best_alert_id": null
+      "best_coverage_fraction": 1.0,
+      "best_coverage_pct": "100.0%",
+      "found_70pct": true,
+      "best_alert_id": "V-2975"
     },
     {
       "ring_index": 52,
       "type": "FAN-IN",
       "accounts_count": 9,
-      "best_coverage_fraction": 0.0,
-      "best_coverage_pct": "0.0%",
+      "best_coverage_fraction": 0.1111,
+      "best_coverage_pct": "11.1%",
       "found_70pct": false,
-      "best_alert_id": null
+      "best_alert_id": "V-0212"
     },
     {
       "ring_index": 53,
@@ -786,10 +786,10 @@
       "ring_index": 55,
       "type": "FAN-OUT",
       "accounts_count": 13,
-      "best_coverage_fraction": 0.0,
-      "best_coverage_pct": "0.0%",
+      "best_coverage_fraction": 0.1538,
+      "best_coverage_pct": "15.4%",
       "found_70pct": false,
-      "best_alert_id": null
+      "best_alert_id": "V-0782"
     },
     {
       "ring_index": 56,
@@ -804,109 +804,109 @@
       "ring_index": 57,
       "type": "STACK",
       "accounts_count": 24,
-      "best_coverage_fraction": 0.0,
-      "best_coverage_pct": "0.0%",
+      "best_coverage_fraction": 0.0417,
+      "best_coverage_pct": "4.2%",
       "found_70pct": false,
-      "best_alert_id": null
+      "best_alert_id": "V-1462"
     },
     {
       "ring_index": 58,
       "type": "CYCLE",
       "accounts_count": 8,
-      "best_coverage_fraction": 0.0,
-      "best_coverage_pct": "0.0%",
+      "best_coverage_fraction": 0.5,
+      "best_coverage_pct": "50.0%",
       "found_70pct": false,
-      "best_alert_id": null
+      "best_alert_id": "V-2951"
     },
     {
       "ring_index": 59,
       "type": "GATHER-SCATTER",
       "accounts_count": 4,
-      "best_coverage_fraction": 0.0,
-      "best_coverage_pct": "0.0%",
+      "best_coverage_fraction": 0.5,
+      "best_coverage_pct": "50.0%",
       "found_70pct": false,
-      "best_alert_id": null
+      "best_alert_id": "V-2991"
     },
     {
       "ring_index": 60,
       "type": "STACK",
       "accounts_count": 16,
-      "best_coverage_fraction": 0.0,
-      "best_coverage_pct": "0.0%",
+      "best_coverage_fraction": 0.0625,
+      "best_coverage_pct": "6.2%",
       "found_70pct": false,
-      "best_alert_id": null
+      "best_alert_id": "V-1918"
     },
     {
       "ring_index": 61,
       "type": "STACK",
       "accounts_count": 21,
-      "best_coverage_fraction": 0.0,
-      "best_coverage_pct": "0.0%",
+      "best_coverage_fraction": 0.0476,
+      "best_coverage_pct": "4.8%",
       "found_70pct": false,
-      "best_alert_id": null
+      "best_alert_id": "V-2913"
     },
     {
       "ring_index": 62,
       "type": "CYCLE",
       "accounts_count": 2,
-      "best_coverage_fraction": 0.0,
-      "best_coverage_pct": "0.0%",
-      "found_70pct": false,
-      "best_alert_id": null
+      "best_coverage_fraction": 1.0,
+      "best_coverage_pct": "100.0%",
+      "found_70pct": true,
+      "best_alert_id": "V-3040"
     },
     {
       "ring_index": 63,
       "type": "RANDOM",
       "accounts_count": 7,
-      "best_coverage_fraction": 0.0,
-      "best_coverage_pct": "0.0%",
+      "best_coverage_fraction": 0.1429,
+      "best_coverage_pct": "14.3%",
       "found_70pct": false,
-      "best_alert_id": null
+      "best_alert_id": "V-0410"
     },
     {
       "ring_index": 64,
       "type": "BIPARTITE",
       "accounts_count": 26,
-      "best_coverage_fraction": 0.0,
-      "best_coverage_pct": "0.0%",
+      "best_coverage_fraction": 0.0385,
+      "best_coverage_pct": "3.8%",
       "found_70pct": false,
-      "best_alert_id": null
+      "best_alert_id": "V-0098"
     },
     {
       "ring_index": 65,
       "type": "STACK",
       "accounts_count": 24,
-      "best_coverage_fraction": 0.0,
-      "best_coverage_pct": "0.0%",
+      "best_coverage_fraction": 0.0417,
+      "best_coverage_pct": "4.2%",
       "found_70pct": false,
-      "best_alert_id": null
+      "best_alert_id": "V-0991"
     },
     {
       "ring_index": 66,
       "type": "SCATTER-GATHER",
       "accounts_count": 15,
-      "best_coverage_fraction": 0.0,
-      "best_coverage_pct": "0.0%",
+      "best_coverage_fraction": 0.0667,
+      "best_coverage_pct": "6.7%",
       "found_70pct": false,
-      "best_alert_id": null
+      "best_alert_id": "V-0013"
     },
     {
       "ring_index": 67,
       "type": "FAN-IN",
       "accounts_count": 14,
-      "best_coverage_fraction": 0.0,
-      "best_coverage_pct": "0.0%",
+      "best_coverage_fraction": 0.0714,
+      "best_coverage_pct": "7.1%",
       "found_70pct": false,
-      "best_alert_id": null
+      "best_alert_id": "V-0611"
     },
     {
       "ring_index": 68,
       "type": "SCATTER-GATHER",
       "accounts_count": 13,
-      "best_coverage_fraction": 0.0,
-      "best_coverage_pct": "0.0%",
+      "best_coverage_fraction": 0.0769,
+      "best_coverage_pct": "7.7%",
       "found_70pct": false,
-      "best_alert_id": null
+      "best_alert_id": "V-0458"
     },
     {
       "ring_index": 69,
@@ -921,19 +921,19 @@
       "ring_index": 70,
       "type": "GATHER-SCATTER",
       "accounts_count": 15,
-      "best_coverage_fraction": 0.0,
-      "best_coverage_pct": "0.0%",
+      "best_coverage_fraction": 0.0667,
+      "best_coverage_pct": "6.7%",
       "found_70pct": false,
-      "best_alert_id": null
+      "best_alert_id": "V-0301"
     },
     {
       "ring_index": 71,
       "type": "FAN-IN",
       "accounts_count": 11,
-      "best_coverage_fraction": 0.0,
-      "best_coverage_pct": "0.0%",
+      "best_coverage_fraction": 0.0909,
+      "best_coverage_pct": "9.1%",
       "found_70pct": false,
-      "best_alert_id": null
+      "best_alert_id": "V-0139"
     },
     {
       "ring_index": 72,
@@ -948,19 +948,19 @@
       "ring_index": 73,
       "type": "FAN-IN",
       "accounts_count": 4,
-      "best_coverage_fraction": 0.0,
-      "best_coverage_pct": "0.0%",
+      "best_coverage_fraction": 0.5,
+      "best_coverage_pct": "50.0%",
       "found_70pct": false,
-      "best_alert_id": null
+      "best_alert_id": "V-2991"
     },
     {
       "ring_index": 74,
       "type": "RANDOM",
       "accounts_count": 2,
-      "best_coverage_fraction": 0.0,
-      "best_coverage_pct": "0.0%",
+      "best_coverage_fraction": 0.5,
+      "best_coverage_pct": "50.0%",
       "found_70pct": false,
-      "best_alert_id": null
+      "best_alert_id": "V-2991"
     },
     {
       "ring_index": 75,

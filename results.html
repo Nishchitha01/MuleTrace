@@ -1,0 +1,35 @@
+<html><head><meta charset='utf-8'><title>MuleTrace results</title><style>
+body{font-family:Segoe UI,Arial;margin:30px;max-width:900px}
+table{border-collapse:collapse;margin-bottom:24px;width:100%}
+th,td{border:1px solid #ccc;padding:6px 10px;text-align:left}
+th{background:#14213d;color:#fff}</style></head><body>
+<h1>MuleTrace: test-split results</h1>
+<h3>Transaction level (test split: 1,015,669 transactions, 1,798 labelled laundering)</h3><table><tr><th>System</th><th>Flagged</th><th>Precision</th><th>Recall</th><th>F1</th></tr>
+<tr><td>Tuned threshold baseline</td><td>399,520</td><td>0.0037</td><td>0.8270</td><td>0.0074</td></tr>
+<tr><td>Plain $10k rule</td><td>165,520</td><td>0.0045</td><td>0.4182</td><td>0.0090</td></tr>
+<tr><td>Baseline, top N by amount (same volume)</td><td>109,895</td><td>0.0009</td><td>0.0539</td><td>0.0017</td></tr>
+<tr><td>MuleTrace, all alerts</td><td>109,895</td><td>0.0022</td><td>0.1363</td><td>0.0044</td></tr>
+<tr><td>MuleTrace, top 50 alerts</td><td>432</td><td>0.0972</td><td>0.0234</td><td>0.0377</td></tr>
+</table>
+<h3>Account level</h3><table><tr><th>System</th><th>Flagged accounts</th><th>Precision</th><th>Recall</th><th>F1</th></tr>
+<tr><td>Tuned threshold baseline</td><td>167,811</td><td>0.0120</td><td>0.9128</td><td>0.0236</td></tr>
+<tr><td>MuleTrace</td><td>43,215</td><td>0.0117</td><td>0.2299</td><td>0.0223</td></tr>
+</table>
+<h3>Detectors (base rate about 0.0018)</h3><table><tr><th>Detector</th><th>Transactions covered</th><th>Precision</th></tr>
+<tr><td>Fan-out</td><td>95,661</td><td>0.0013</td></tr>
+<tr><td>Fan-in</td><td>11,914</td><td>0.0031</td></tr>
+<tr><td>Chains</td><td>3,939</td><td>0.0099</td></tr>
+<tr><td>Cycles</td><td>116</td><td>0.3621</td></tr>
+</table>
+<h3>Ring recall (one alert holds at least 70% of a ring's accounts)</h3><table><tr><th>Ring type</th><th>Found</th><th>Total</th></tr>
+<tr><td>Bipartite</td><td>9</td><td>17</td></tr>
+<tr><td>Cycle</td><td>2</td><td>10</td></tr>
+<tr><td>Fan-in</td><td>2</td><td>12</td></tr>
+<tr><td>Fan-out</td><td>2</td><td>10</td></tr>
+<tr><td>Gather-scatter</td><td>2</td><td>16</td></tr>
+<tr><td>Random</td><td>3</td><td>12</td></tr>
+<tr><td>Scatter-gather</td><td>4</td><td>11</td></tr>
+<tr><td>Stack</td><td>4</td><td>7</td></tr>
+<tr><td>All</td><td>28</td><td>95</td></tr>
+</table>
+<h3>Limitations</h3><ul><li>Synthetic benchmark (IBM AML HI-Small). About 0.18% of test transactions are labelled laundering.</li><li>Whole-list F1 is below the threshold baseline: it flags 399,520 transactions for 83% recall; MuleTrace flags 109,895 for 14%.</li><li>Strength: precision of ranked alerts. The top 50 alerts hold 42 labelled-laundering transactions in 432 (precision 0.097), driven mostly by the cycle detector.</li><li>Ring recall is low for rings with more than 2 accounts; most rings found are 2-account rings.</li><li>The fan-out detector is at or below base-rate precision.</li><li>The alert ranking order was chosen on the validation split.</li></ul></body></html>

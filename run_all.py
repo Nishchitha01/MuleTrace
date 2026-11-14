@@ -34,7 +34,7 @@ ROOT = Path(__file__).resolve().parent
 sys.path.insert(0, str(ROOT))
 
 from src.load import load, time_split
-from src.patterns import parse_patterns
+from src.patterns_fixed import parse_patterns
 from src.baseline import tune_baseline, evaluate_baseline, baseline
 from src.evaluate import prf, account_level_prf, ring_recall, print_table
 from src.detectors import fan, chains, temporal_cycles, scatter_gather, gather_scatter
