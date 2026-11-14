@@ -2,3 +2,5 @@ data/
 venv/
 models/
 node_modules/
+__pycache__/
+*.pyc
